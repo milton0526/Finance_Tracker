@@ -49,7 +49,7 @@ extension AddPaymentView {
                 Spacer()
                 
                 Button {
-                    homeVM.addNewPayment(type: homeVM.selectedType.rawValue, icon: homeVM.selectedItem ?? "", name: homeVM.nameTextField, amount: Double(homeVM.amountTextField) ?? 0.0, date: homeVM.dateField)
+                    homeVM.addPayment(type: homeVM.selectedType.rawValue, icon: homeVM.selectedItem ?? "", name: homeVM.nameTextField, amount: Double(homeVM.amountTextField) ?? 0.0, date: homeVM.dateField)
                     
                     dismiss()
                 } label: {

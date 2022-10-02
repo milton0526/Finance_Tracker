@@ -9,9 +9,6 @@ import Foundation
 import SwiftUI
 import Combine
 
-
-//  After update payment detail, home view not reload...
-
 class HomeViewModel: ObservableObject {
     private let paymentDataService = PaymentDataService()
     private var cancellable = Set<AnyCancellable>()
@@ -44,7 +41,6 @@ class HomeViewModel: ObservableObject {
     }
     
     
-    // Add Subscriber
     func addSubscriber() {
         
         paymentDataService.$payments
@@ -131,7 +127,7 @@ class HomeViewModel: ObservableObject {
         amountTextField = ""
     }
     
-    func addNewPayment(type: Int64, icon: String, name: String, amount: Double, date: Date) {
+    func addPayment(type: Int64, icon: String, name: String, amount: Double, date: Date) {
         paymentDataService.addNewPayment(type: type, icon: icon, name: name, amount: amount, date: date)
     }
     
@@ -142,7 +138,7 @@ class HomeViewModel: ObservableObject {
         }
     }
     
-    func updatePaymentDetail(payment: Payment, type: Int64, icon: String, name: String, amount: Double, date: Date) {
+    func updatePayment(payment: Payment, type: Int64, icon: String, name: String, amount: Double, date: Date) {
         paymentDataService.updatePaymentDetail(payment: payment, type: type, icon: icon, name: name, amount: abs(amount), date: date)
     }
     

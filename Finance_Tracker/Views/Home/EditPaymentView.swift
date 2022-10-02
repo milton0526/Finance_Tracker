@@ -57,7 +57,7 @@ extension EditPaymentView {
                 Spacer()
                 
                 Button {
-                    homeVM.updatePaymentDetail(payment: payment, type: currentType.rawValue,icon: selectedItem ?? "", name: name, amount: Double(amount) ?? 0.0, date: date)
+                    homeVM.updatePayment(payment: payment, type: currentType.rawValue,icon: selectedItem ?? "", name: name, amount: Double(amount) ?? 0.0, date: date)
                     
                     dismiss()
                 } label: {
