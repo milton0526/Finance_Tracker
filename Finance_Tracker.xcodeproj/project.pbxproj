@@ -10,19 +10,19 @@
 		C413477E2886A24200C0E989 /* Finance_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C413477D2886A24200C0E989 /* Finance_TrackerApp.swift */; };
 		C41347822886A24200C0E989 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C41347812886A24200C0E989 /* Assets.xcassets */; };
 		C41347852886A24200C0E989 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C41347842886A24200C0E989 /* Preview Assets.xcassets */; };
-		C41347922886A3D300C0E989 /* TranscationRecord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C41347902886A3D300C0E989 /* TranscationRecord.xcdatamodeld */; };
-		C41347952886A5F300C0E989 /* TranscationDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41347942886A5F300C0E989 /* TranscationDataService.swift */; };
+		C41347922886A3D300C0E989 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C41347902886A3D300C0E989 /* Main.xcdatamodeld */; };
+		C41347952886A5F300C0E989 /* PaymentDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41347942886A5F300C0E989 /* PaymentDataService.swift */; };
 		C413479A2886AC2600C0E989 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41347992886AC2600C0E989 /* HomeView.swift */; };
 		C413479D2886AFE000C0E989 /* MaterialButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C413479C2886AFDF00C0E989 /* MaterialButtonView.swift */; };
-		C413EE2C2894F69100E4AE6F /* TranscationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C413EE2B2894F69100E4AE6F /* TranscationListView.swift */; };
+		C413EE2C2894F69100E4AE6F /* PaymentsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C413EE2B2894F69100E4AE6F /* PaymentsListView.swift */; };
 		C4680D03289D562600AE7107 /* StaticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4680D02289D562600AE7107 /* StaticsView.swift */; };
-		C4680D05289F68EB00AE7107 /* EditTranscationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4680D04289F68EB00AE7107 /* EditTranscationView.swift */; };
+		C4680D05289F68EB00AE7107 /* EditPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4680D04289F68EB00AE7107 /* EditPaymentView.swift */; };
 		C49A0BF8289D47E10093D14B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A0BF7289D47E10093D14B /* DetailView.swift */; };
 		C4B5078A28A39B860008F6B0 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B5078928A39B860008F6B0 /* InformationView.swift */; };
 		C4B513542887F9C30040E33F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B513532887F9C30040E33F /* Color.swift */; };
 		C4B51358288828D20040E33F /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B51357288828D20040E33F /* SearchBarView.swift */; };
 		C4B5135A2888291A0040E33F /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B513592888291A0040E33F /* UIApplication.swift */; };
-		C4B5135C288839480040E33F /* AddTranscationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B5135B288839480040E33F /* AddTranscationView.swift */; };
+		C4B5135C288839480040E33F /* AddPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B5135B288839480040E33F /* AddPaymentView.swift */; };
 		C4CA92D8288ECF3A004BE65C /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CA92D7288ECF3A004BE65C /* CategoryView.swift */; };
 		C4CA92DB28912971004BE65C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CA92DA28912971004BE65C /* HomeViewModel.swift */; };
 		C4CA92DD2893E18B004BE65C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CA92DC2893E18B004BE65C /* Date.swift */; };
@@ -34,19 +34,18 @@
 		C41347812886A24200C0E989 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C41347842886A24200C0E989 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C41347912886A3D300C0E989 /* TranscationRecord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TranscationRecord.xcdatamodel; sourceTree = "<group>"; };
-		C41347942886A5F300C0E989 /* TranscationDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscationDataService.swift; sourceTree = "<group>"; };
+		C41347942886A5F300C0E989 /* PaymentDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDataService.swift; sourceTree = "<group>"; };
 		C41347992886AC2600C0E989 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C413479C2886AFDF00C0E989 /* MaterialButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButtonView.swift; sourceTree = "<group>"; };
-		C413EE2B2894F69100E4AE6F /* TranscationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscationListView.swift; sourceTree = "<group>"; };
+		C413EE2B2894F69100E4AE6F /* PaymentsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsListView.swift; sourceTree = "<group>"; };
 		C4680D02289D562600AE7107 /* StaticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticsView.swift; sourceTree = "<group>"; };
-		C4680D04289F68EB00AE7107 /* EditTranscationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTranscationView.swift; sourceTree = "<group>"; };
+		C4680D04289F68EB00AE7107 /* EditPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPaymentView.swift; sourceTree = "<group>"; };
 		C49A0BF7289D47E10093D14B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		C4B5078828A39A4A0008F6B0 /* Finance-Tracker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Finance-Tracker-Info.plist"; sourceTree = SOURCE_ROOT; };
 		C4B5078928A39B860008F6B0 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		C4B513532887F9C30040E33F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		C4B51357288828D20040E33F /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		C4B513592888291A0040E33F /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
-		C4B5135B288839480040E33F /* AddTranscationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTranscationView.swift; sourceTree = "<group>"; };
+		C4B5135B288839480040E33F /* AddPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentView.swift; sourceTree = "<group>"; };
 		C4CA92D7288ECF3A004BE65C /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		C4CA92DA28912971004BE65C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C4CA92DC2893E18B004BE65C /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -82,7 +81,6 @@
 		C413477C2886A24200C0E989 /* Finance_Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				C4B5078828A39A4A0008F6B0 /* Finance-Tracker-Info.plist */,
 				C413477D2886A24200C0E989 /* Finance_TrackerApp.swift */,
 				C41347A22887F98200C0E989 /* Extensions */,
 				C41347932886A5C600C0E989 /* Services */,
@@ -114,7 +112,7 @@
 		C413478C2886A27900C0E989 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C41347902886A3D300C0E989 /* TranscationRecord.xcdatamodeld */,
+				C41347902886A3D300C0E989 /* Main.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -122,7 +120,7 @@
 		C41347932886A5C600C0E989 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C41347942886A5F300C0E989 /* TranscationDataService.swift */,
+				C41347942886A5F300C0E989 /* PaymentDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -131,8 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				C41347992886AC2600C0E989 /* HomeView.swift */,
-				C4B5135B288839480040E33F /* AddTranscationView.swift */,
-				C4680D04289F68EB00AE7107 /* EditTranscationView.swift */,
+				C4B5135B288839480040E33F /* AddPaymentView.swift */,
+				C4680D04289F68EB00AE7107 /* EditPaymentView.swift */,
 				C49A0BF7289D47E10093D14B /* DetailView.swift */,
 				C4B5078928A39B860008F6B0 /* InformationView.swift */,
 				C4CA92D92891294E004BE65C /* ViewModels */,
@@ -146,7 +144,7 @@
 				C413479C2886AFDF00C0E989 /* MaterialButtonView.swift */,
 				C4B51357288828D20040E33F /* SearchBarView.swift */,
 				C4CA92D7288ECF3A004BE65C /* CategoryView.swift */,
-				C413EE2B2894F69100E4AE6F /* TranscationListView.swift */,
+				C413EE2B2894F69100E4AE6F /* PaymentsListView.swift */,
 				C4680D02289D562600AE7107 /* StaticsView.swift */,
 			);
 			path = Components;
@@ -246,18 +244,18 @@
 			files = (
 				C4B5135A2888291A0040E33F /* UIApplication.swift in Sources */,
 				C413479D2886AFE000C0E989 /* MaterialButtonView.swift in Sources */,
-				C413EE2C2894F69100E4AE6F /* TranscationListView.swift in Sources */,
+				C413EE2C2894F69100E4AE6F /* PaymentsListView.swift in Sources */,
 				C49A0BF8289D47E10093D14B /* DetailView.swift in Sources */,
-				C4B5135C288839480040E33F /* AddTranscationView.swift in Sources */,
-				C41347952886A5F300C0E989 /* TranscationDataService.swift in Sources */,
+				C4B5135C288839480040E33F /* AddPaymentView.swift in Sources */,
+				C41347952886A5F300C0E989 /* PaymentDataService.swift in Sources */,
 				C4CA92D8288ECF3A004BE65C /* CategoryView.swift in Sources */,
 				C413479A2886AC2600C0E989 /* HomeView.swift in Sources */,
 				C4CA92DB28912971004BE65C /* HomeViewModel.swift in Sources */,
 				C4680D03289D562600AE7107 /* StaticsView.swift in Sources */,
 				C4CA92DD2893E18B004BE65C /* Date.swift in Sources */,
-				C4680D05289F68EB00AE7107 /* EditTranscationView.swift in Sources */,
+				C4680D05289F68EB00AE7107 /* EditPaymentView.swift in Sources */,
 				C4B51358288828D20040E33F /* SearchBarView.swift in Sources */,
-				C41347922886A3D300C0E989 /* TranscationRecord.xcdatamodeld in Sources */,
+				C41347922886A3D300C0E989 /* Main.xcdatamodeld in Sources */,
 				C4B5078A28A39B860008F6B0 /* InformationView.swift in Sources */,
 				C413477E2886A24200C0E989 /* Finance_TrackerApp.swift in Sources */,
 				C4B513542887F9C30040E33F /* Color.swift in Sources */,
@@ -317,7 +315,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -371,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -393,8 +391,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Finance-Tracker-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Monry Tracker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -423,8 +423,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Finance-Tracker-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Monry Tracker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -465,13 +467,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		C41347902886A3D300C0E989 /* TranscationRecord.xcdatamodeld */ = {
+		C41347902886A3D300C0E989 /* Main.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				C41347912886A3D300C0E989 /* TranscationRecord.xcdatamodel */,
 			);
 			currentVersion = C41347912886A3D300C0E989 /* TranscationRecord.xcdatamodel */;
-			path = TranscationRecord.xcdatamodeld;
+			path = Main.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

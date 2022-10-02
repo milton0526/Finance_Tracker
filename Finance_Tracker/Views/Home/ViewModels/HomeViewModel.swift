@@ -10,18 +10,18 @@ import SwiftUI
 import Combine
 
 
-//  After upadte transcation detail, home view not reload...
+//  After update payment detail, home view not reload...
 
 class HomeViewModel: ObservableObject {
-    private let transcationDataService = TranscationDataService()
-    private var cancellables = Set<AnyCancellable>()
+    private let paymentDataService = PaymentDataService()
+    private var cancellable = Set<AnyCancellable>()
     
     init() {
         addSubscriber()
     }
     
     // MARK: HomeView
-    @Published var allTranscations: [Transcation] = []
+    @Published var allPayments: [Payment] = []
     @Published var progress: CGFloat = 0.0
     @Published var searchText: String = ""
     @Published var balanceType: BalanceTypeName = .balance
@@ -47,7 +47,7 @@ class HomeViewModel: ObservableObject {
     // Add Subscriber
     func addSubscriber() {
         
-        transcationDataService.$transcationRecord
+        paymentDataService.$payments
             .combineLatest($searchText, $sortOptions)
             .sink { [weak self] (returnedData, inputSearchText, sortOption) in
                 
@@ -70,22 +70,22 @@ class HomeViewModel: ObservableObject {
                 if inputSearchText.isEmpty {
                     switch sortOption {
                     case.time:
-                        self?.allTranscations = returnedData.sorted(by: { $0.date ?? .now > $1.date ?? .now })
+                        self?.allPayments = returnedData.sorted(by: { $0.date ?? .now > $1.date ?? .now })
                     case.timeReversed:
-                        self?.allTranscations = returnedData.sorted(by: { $0.date ?? .now < $1.date ?? .now })
+                        self?.allPayments = returnedData.sorted(by: { $0.date ?? .now < $1.date ?? .now })
                     case.price:
-                        self?.allTranscations = returnedData.sorted(by: { $0.amount < $1.amount })
+                        self?.allPayments = returnedData.sorted(by: { $0.amount < $1.amount })
                     case .priceReversed:
-                        self?.allTranscations = returnedData.sorted(by: { $0.amount > $1.amount })
+                        self?.allPayments = returnedData.sorted(by: { $0.amount > $1.amount })
                     }
                     
                 } else {
-                    self?.allTranscations = returnedData.filter({ payment in
+                    self?.allPayments = returnedData.filter({ payment in
                         (payment.name ?? "").contains(inputSearchText)
                     })
                 }
             }
-            .store(in: &cancellables)
+            .store(in: &cancellable)
     }
 
     func changeBalanceType(type: BalanceTypeName) {
@@ -104,12 +104,12 @@ class HomeViewModel: ObservableObject {
     }
     
     
-    // MARK: AddNewTranscationView
+    // MARK: AddNewPaymentView
     @Published var nameTextField: String = ""
     @Published var amountTextField: String = ""
     @Published var dateField: Date = .now
     @Published var selectedItem: String? = nil
-    @Published var selectedType: TranscationType = .expense
+    @Published var selectedType: PaymentType = .expense
     
     @Published var expenseCategory: [String] = [
         "食物", "飲料", "交通", "社交", "娛樂", "旅遊", "生活用品", "衣物", "購物", "禮品", "投資", "醫療", "運動", "學習", "各項費用", "其他"
@@ -132,23 +132,23 @@ class HomeViewModel: ObservableObject {
     }
     
     func addNewPayment(type: Int64, icon: String, name: String, amount: Double, date: Date) {
-        transcationDataService.addNewPayment(type: type, icon: icon, name: name, amount: amount, date: date)
+        paymentDataService.addNewPayment(type: type, icon: icon, name: name, amount: amount, date: date)
     }
     
     func deletePayment(at offset: IndexSet) {
         for index in offset {
-            let payment = allTranscations[index]
-            transcationDataService.delete(entity: payment)
+            let payment = allPayments[index]
+            paymentDataService.delete(entity: payment)
         }
     }
     
-    func updatePaymentDatail(transcation: Transcation, type: Int64, icon: String, name: String, amount: Double, date: Date) {
-        transcationDataService.updateTranscationDetail(transcation: transcation, type: type, icon: icon, name: name, amount: abs(amount), date: date)
+    func updatePaymentDetail(payment: Payment, type: Int64, icon: String, name: String, amount: Double, date: Date) {
+        paymentDataService.updatePaymentDetail(payment: payment, type: type, icon: icon, name: name, amount: abs(amount), date: date)
     }
     
 }
 
-enum TranscationType: Int64, Identifiable {
+enum PaymentType: Int64, Identifiable {
     case expense = 0
     case income = 1
     var id: Self { self }

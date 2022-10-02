@@ -1,5 +1,5 @@
 //
-//  TranscationListView.swift
+//  PaymentListView.swift
 //  Finance_Tracker
 //
 //  Created by Milton Liu on 2022/7/30.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct TranscationListView: View {
-    let transcation: Transcation
+struct PaymentsListView: View {
+    let payment: Payment
     
     var body: some View {
         HStack(spacing: 15) {
-            Image(transcation.icon ?? "")
+            Image(payment.icon ?? "")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 40, height: 40)
@@ -22,34 +22,34 @@ struct TranscationListView: View {
             
             
             VStack(alignment: .leading, spacing: 5) {
-                Text(transcation.name ?? "")
+                Text(payment.name ?? "")
                     .font(.headline)
                 
-                Text(transcation.date?.asShortDateString() ?? "")
+                Text(payment.date?.asShortDateString() ?? "")
                     .font(.caption)
                     .foregroundColor(.secondary)
             }
             
             Spacer()
-            Text("$ \(transcation.amount.formatted())")
+            Text("$ \(payment.amount.formatted())")
                 .font(.headline)
-                .foregroundColor(transcation.amount < 0 ? .red : .green)
+                .foregroundColor(payment.amount < 0 ? .red : .green)
         }
         .padding(5)
         .background(Color.theme.sectionBackground.opacity(0.001))
     }
 }
 
-struct TranscationListItemView_Previews: PreviewProvider {
+struct PaymentsListView_Previews: PreviewProvider {
     static let homeVM = HomeViewModel()
     
     static var previews: some View {
         Group {
-            TranscationListView(transcation: homeVM.allTranscations[0])
+            PaymentsListView(payment: homeVM.allPayments[0])
                 .padding()
                 .previewLayout(.sizeThatFits)
             
-            TranscationListView(transcation: homeVM.allTranscations[0])
+            PaymentsListView(payment: homeVM.allPayments[0])
                 .padding()
                 .previewLayout(.sizeThatFits)
                 .preferredColorScheme(.dark)

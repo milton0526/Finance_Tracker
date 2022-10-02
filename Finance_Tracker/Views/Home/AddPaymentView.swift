@@ -1,23 +1,18 @@
 //
-//  EditTranscationView.swift
+//  AddPaymentView.swift
 //  Finance_Tracker
 //
-//  Created by Milton Liu on 2022/8/7.
+//  Created by Milton Liu on 2022/7/20.
 //
 
 import SwiftUI
 
-struct EditTranscationView: View {
+
+struct AddPaymentView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject private var homeVM: HomeViewModel
     
-    let transcation: Transcation
-    
-    @State private var currentType: TranscationType = .expense
-    @State private var selectedItem: String? = nil
-    @State private var name: String = ""
-    @State private var amount: String = ""
-    @State private var date: Date = .now
+    let title: String
     
     var body: some View {
         VStack {
@@ -34,17 +29,14 @@ struct EditTranscationView: View {
     }
 }
 
-struct EditTranscationView_Previews: PreviewProvider {
-    static let homeVM = HomeViewModel()
-    
+struct AddNewPaymentView_Previews: PreviewProvider {
     static var previews: some View {
-        EditTranscationView(transcation: homeVM.allTranscations[0])
+        AddPaymentView(title: "新增交易紀錄")
             .environmentObject(HomeViewModel())
     }
 }
 
-// Extension for Views
-extension EditTranscationView {
+extension AddPaymentView {
     private var headerSection: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -57,17 +49,17 @@ extension EditTranscationView {
                 Spacer()
                 
                 Button {
-                    homeVM.updatePaymentDatail(transcation: transcation, type: currentType.rawValue,icon: selectedItem ?? "", name: name, amount: Double(amount) ?? 0.0, date: date)
+                    homeVM.addNewPayment(type: homeVM.selectedType.rawValue, icon: homeVM.selectedItem ?? "", name: homeVM.nameTextField, amount: Double(homeVM.amountTextField) ?? 0.0, date: homeVM.dateField)
                     
                     dismiss()
                 } label: {
                     MaterialButtonView(iconName: "checkmark")
                 }
-                .disabled(checkUpdateDetails())
+                .disabled(homeVM.check())
             }
             .font(.headline)
             
-            Text("編輯此筆交易")
+            Text(title)
                 .font(.title)
                 .bold()
                 .padding(.horizontal)
@@ -75,30 +67,30 @@ extension EditTranscationView {
     }
     
     private var selectedTypeSection: some View {
-        Picker("Select type", selection: $currentType) {
-            Text("支出").tag(TranscationType.expense)
-            Text("收入").tag(TranscationType.income)
+        Picker("Select type", selection: $homeVM.selectedType) {
+            Text("支出").tag(PaymentType.expense)
+            Text("收入").tag(PaymentType.income)
         }
         .pickerStyle(.segmented)
         .padding(.horizontal)
-        .onAppear {
-            currentType = currentSelcetedType(type: transcation.type)
-            currentSelectedItem(selectedItem: transcation.icon ?? "", name: transcation.name ?? "", amount: transcation.amount.description, date: transcation.date ?? .now)
-        }
     }
     
     private var categorySection: some View {
         ScrollView(showsIndicators: false) {
             VStack {
-                if currentType == .expense {
-                    CategoryView(images: homeVM.expenseCategory, selectedItem: $selectedItem, textField: $name)
+                if homeVM.selectedType == .expense {
+                    CategoryView(images: homeVM.expenseCategory, selectedItem: $homeVM.selectedItem, textField: $homeVM.nameTextField)
+                        
                 }
                 
-                if currentType == .income {
-                    CategoryView(images: homeVM.incomeCategory, selectedItem: $selectedItem, textField: $name)
+                if homeVM.selectedType == .income {
+                    CategoryView(images: homeVM.incomeCategory, selectedItem: $homeVM.selectedItem, textField: $homeVM.nameTextField)
                 }
             }
             .padding(5)
+            .onAppear {
+                homeVM.clearSelectedItem()
+            }
         }
         .frame(height: UIScreen.main.bounds.height * 0.3)
         .background(.regularMaterial)
@@ -111,7 +103,7 @@ extension EditTranscationView {
             HStack {
                 Text("名稱")
                 Spacer()
-                TextField(transcation.name ?? "", text: $name)
+                TextField(homeVM.nameTextField, text: $homeVM.nameTextField)
                     .multilineTextAlignment(.trailing)
                 
             }
@@ -127,9 +119,9 @@ extension EditTranscationView {
                 Text("金額")
                 Spacer()
                 
-                TextField("\(transcation.amount.formatted())", text: $amount)
+                TextField("0", text: $homeVM.amountTextField)
                     .multilineTextAlignment(.trailing)
-                    .keyboardType(.numberPad)
+                    .keyboardType(.numbersAndPunctuation)
                 
             }
             .font(.headline)
@@ -139,36 +131,10 @@ extension EditTranscationView {
             Divider()
                 .padding([.horizontal, .bottom])
             
-            DatePicker("日期", selection: $date, displayedComponents: .date)
+            DatePicker("日期", selection: $homeVM.dateField, displayedComponents: .date)
                 .datePickerStyle(.compact)
                 .font(.headline)
                 .padding(.horizontal, 30)
         }
-    }
-}
-
-// Extension for function
-extension EditTranscationView {
-    
-    func currentSelcetedType(type: Int64) -> TranscationType {
-        if type == 0 {
-            return .expense
-        } else {
-            return .income
-        }
-    }
-    
-    func currentSelectedItem(selectedItem: String, name: String, amount: String, date: Date) {
-        self.selectedItem = selectedItem
-        self.name = name
-        self.amount = amount
-        self.date = date
-    }
-    
-    func checkUpdateDetails() -> Bool {
-        guard selectedItem != nil && !name.isEmpty && !amount.isEmpty else {
-            return true
-        }
-        return false
     }
 }

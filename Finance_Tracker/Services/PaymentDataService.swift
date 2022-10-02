@@ -8,12 +8,12 @@
 import Foundation
 import CoreData
 
-class TranscationDataService: ObservableObject {
-    @Published var transcationRecord: [Transcation] = []
+class PaymentDataService: ObservableObject {
+    @Published var payments: [Payment] = []
     
     private let container: NSPersistentContainer
-    private let containerName: String = "TranscationRecord"
-    private let entityName: String = "Transcation"
+    private let containerName: String = "Main"
+    private let entityName: String = "Payment"
     
     init() {
         container = NSPersistentContainer(name: containerName)
@@ -27,7 +27,7 @@ class TranscationDataService: ObservableObject {
     }
     
     func addNewPayment(type: Int64, icon: String, name: String, amount: Double, date: Date) {
-        let entity = Transcation(context: container.viewContext)
+        let entity = Payment(context: container.viewContext)
         entity.id = UUID().uuidString
         entity.type = type
         
@@ -42,14 +42,14 @@ class TranscationDataService: ObservableObject {
         applyChanges()
     }
     
-    func delete(entity: Transcation) {
+    func delete(entity: Payment) {
         container.viewContext.delete(entity)
         applyChanges()
     }
     
-    func updateTranscationDetail(transcation: Transcation, type: Int64, icon: String, name: String, amount: Double, date: Date) {
+    func updatePaymentDetail(payment: Payment, type: Int64, icon: String, name: String, amount: Double, date: Date) {
         
-        guard let currentSelection = transcationRecord.first(where: { $0.id == transcation.id }) else {
+        guard let currentSelection = payments.first(where: { $0.id == payment.id }) else {
             return
         }
         
@@ -71,9 +71,9 @@ class TranscationDataService: ObservableObject {
     
     
     private func loadingData() {
-        let request = NSFetchRequest<Transcation>(entityName: entityName)
+        let request = NSFetchRequest<Payment>(entityName: entityName)
         do {
-            transcationRecord = try container.viewContext.fetch(request)
+            payments = try container.viewContext.fetch(request)
         } catch let error {
             print("Error fetching core data. \(error)")
         }

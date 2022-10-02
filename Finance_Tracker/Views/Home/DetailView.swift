@@ -9,7 +9,8 @@ import SwiftUI
 
 struct DetailView: View {
     @Environment(\.dismiss) var dismiss
-    let transcation: Transcation
+
+    @ObservedObject var payment: Payment
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
     
     @State private var showEditView: Bool = false
@@ -18,7 +19,7 @@ struct DetailView: View {
         VStack {
             headerSection
             
-            Image(transcation.type == 0 ? "expense" : "income")
+            Image(payment.type == 0 ? "expense" : "income")
                 .resizable()
                 .scaledToFill()
                 .frame(maxWidth: .infinity)
@@ -27,13 +28,15 @@ struct DetailView: View {
                 .padding(.horizontal)
             
             LazyVGrid(columns: columns) {
-                StaticsView(title: "類型", detail: transcation.type == 0 ? "支出" : "收入")
+                StaticsView(title: "類型", detail: payment.type == 0 ? "支出" : "收入")
                 
-                StaticsView(title: "名稱", detail: transcation.name ?? "")
+                StaticsView(title: "名稱", detail: payment
+                    .name ?? "")
                 
-                StaticsView(title: "金額", detail: "$ \(transcation.amount.formatted())")
+                StaticsView(title: "金額", detail: "$ \(payment.amount.formatted())")
                 
-                StaticsView(title: "日期", detail: (transcation.date ?? .now).asShortDateString())
+                StaticsView(title: "日期", detail: (payment
+                    .date ?? .now).asShortDateString())
                     
             }
             
@@ -47,7 +50,7 @@ struct DetailView_Previews: PreviewProvider {
     static let homeVM = HomeViewModel()
     
     static var previews: some View {
-        DetailView(transcation: homeVM.allTranscations[0])
+        DetailView(payment: homeVM.allPayments[0])
             .environmentObject(HomeViewModel())
     }
 }
@@ -62,7 +65,7 @@ extension DetailView {
             }
             Spacer()
             
-            Text(transcation.name ?? "")
+            Text(payment.name ?? "")
                 .font(.title3)
                 .fontWeight(.semibold)
             
@@ -75,7 +78,7 @@ extension DetailView {
             }
         }
         .sheet(isPresented: $showEditView) {
-            EditTranscationView(transcation: transcation)
+            EditPaymentView(payment: payment)
         }
     }
 }

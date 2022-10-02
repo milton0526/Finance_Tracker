@@ -11,7 +11,7 @@ struct HomeView: View {
     
     @EnvironmentObject private var homeVM: HomeViewModel
     
-    @State private var showAddTranscationView: Bool = false
+    @State private var showAddNewPaymentView: Bool = false
     @State private var showInformationView: Bool = false
     @State private var showBalanceTypes: Bool = false
     
@@ -22,9 +22,9 @@ struct HomeView: View {
                 
                 balanceSection
                 
-                transcationTitle
+                paymentTitle
                 
-                transcationList
+                paymentList
             }
             .navigationBarHidden(true)
         }
@@ -55,14 +55,14 @@ extension HomeView {
             
             Spacer()
             Button {
-                showAddTranscationView.toggle()
+                showAddNewPaymentView.toggle()
             } label: {
                 MaterialButtonView(iconName: "plus")
             }
         }
         .font(.headline)
-        .sheet(isPresented: $showAddTranscationView) {
-            AddTranscationView(title: "新增交易紀錄")
+        .sheet(isPresented: $showAddNewPaymentView) {
+            AddPaymentView(title: "新增交易紀錄")
         }
         .sheet(isPresented: $showInformationView) {
             InformationView()
@@ -134,7 +134,7 @@ extension HomeView {
         .padding(.bottom, 30)
     }
     
-    private var transcationTitle: some View {
+    private var paymentTitle: some View {
         VStack {
             SearchBarView(placeholder: "搜尋一筆交易", searchText: $homeVM.searchText)
                 .padding(.bottom)
@@ -172,13 +172,13 @@ extension HomeView {
         .padding(.horizontal)
     }
     
-    private var transcationList: some View {
+    private var paymentList: some View {
         List {
-            ForEach(homeVM.allTranscations, id: \.id) { item in
+            ForEach(homeVM.allPayments, id: \.id) { item in
                 NavigationLink {
-                    DetailView(transcation: item)
+                    DetailView(payment: item)
                 } label: {
-                    TranscationListView(transcation: item)
+                    PaymentsListView(payment: item)
                 }
                 .listRowSeparator(.hidden)
             }
