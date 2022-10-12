@@ -18,6 +18,10 @@
 		C4680D03289D562600AE7107 /* StaticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4680D02289D562600AE7107 /* StaticsView.swift */; };
 		C4680D05289F68EB00AE7107 /* EditPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4680D04289F68EB00AE7107 /* EditPaymentView.swift */; };
 		C49A0BF8289D47E10093D14B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A0BF7289D47E10093D14B /* DetailView.swift */; };
+		C4A3033A28F6A86E00513428 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A3033628F6A86E00513428 /* add.png */; };
+		C4A3033B28F6A86E00513428 /* expenseDetail.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A3033728F6A86E00513428 /* expenseDetail.png */; };
+		C4A3033C28F6A86E00513428 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A3033828F6A86E00513428 /* home.png */; };
+		C4A3033D28F6A86E00513428 /* incomeDetail.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A3033928F6A86E00513428 /* incomeDetail.png */; };
 		C4B5078A28A39B860008F6B0 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B5078928A39B860008F6B0 /* InformationView.swift */; };
 		C4B513542887F9C30040E33F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B513532887F9C30040E33F /* Color.swift */; };
 		C4B51358288828D20040E33F /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B51357288828D20040E33F /* SearchBarView.swift */; };
@@ -41,6 +45,10 @@
 		C4680D02289D562600AE7107 /* StaticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticsView.swift; sourceTree = "<group>"; };
 		C4680D04289F68EB00AE7107 /* EditPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPaymentView.swift; sourceTree = "<group>"; };
 		C49A0BF7289D47E10093D14B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		C4A3033628F6A86E00513428 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		C4A3033728F6A86E00513428 /* expenseDetail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expenseDetail.png; sourceTree = "<group>"; };
+		C4A3033828F6A86E00513428 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		C4A3033928F6A86E00513428 /* incomeDetail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incomeDetail.png; sourceTree = "<group>"; };
 		C4B5078928A39B860008F6B0 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		C4B513532887F9C30040E33F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		C4B51357288828D20040E33F /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -95,6 +103,10 @@
 		C41347832886A24200C0E989 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				C4A3033628F6A86E00513428 /* add.png */,
+				C4A3033728F6A86E00513428 /* expenseDetail.png */,
+				C4A3033828F6A86E00513428 /* home.png */,
+				C4A3033928F6A86E00513428 /* incomeDetail.png */,
 				C41347842886A24200C0E989 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -230,8 +242,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4A3033A28F6A86E00513428 /* add.png in Resources */,
+				C4A3033D28F6A86E00513428 /* incomeDetail.png in Resources */,
+				C4A3033C28F6A86E00513428 /* home.png in Resources */,
 				C41347852886A24200C0E989 /* Preview Assets.xcassets in Resources */,
 				C41347822886A24200C0E989 /* Assets.xcassets in Resources */,
+				C4A3033B28F6A86E00513428 /* expenseDetail.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
