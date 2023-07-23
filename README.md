@@ -1,5 +1,6 @@
 # Finance_Tracker
-A simple finance tracker app from  ios dev beginner that can track, search and manage your money.
+A simple finance tracker app that can track, search and manage your money.  
+All app is build on SwiftUI.
 
 Home:  
 
